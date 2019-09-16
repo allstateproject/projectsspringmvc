@@ -14,6 +14,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.allstate.training.ffd.entities.Customer;
+import com.allstate.training.ffd.entities.Employees;
+import com.allstate.training.ffd.entities.Expense;
+import com.allstate.training.ffd.entities.Order;
+import com.allstate.training.ffd.entities.Product;
+import com.allstate.training.ffd.entities.Shop;
 
 
 
@@ -42,7 +47,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 	public DriverManagerDataSource getDataSource() {
 		DriverManagerDataSource dataSource=new DriverManagerDataSource();
 		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/VMS");
+		dataSource.setUrl("jdbc:mysql://127.0.0.1:3306/ffd");
 		dataSource.setUsername("root");
 		dataSource.setPassword("admin");
 		return dataSource;
@@ -63,16 +68,16 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 				"org.hibernate.cache.ehcache.EhCacheRegionFactory");
 		*/
 		sessionFactory.setHibernateProperties(props);
-		sessionFactory.setPackagesToScan(new String[] {"com.allstate.training.ffd.entites"});
+		sessionFactory.setPackagesToScan(new String[] {"com.allstate.training.ffd.entities"});
+		sessionFactory.setAnnotatedClasses(Shop.class);
 		sessionFactory.setAnnotatedClasses(Customer.class);
-		/*sessionFactory.setAnnotatedClasses(Passenger.class);
-		sessionFactory.setAnnotatedClasses(Route.class);
-		sessionFactory.setAnnotatedClasses(Schedule.class);
-		sessionFactory.setAnnotatedClasses(Ship.class);
-		sessionFactory.setAnnotatedClasses(Ticket.class);
-		sessionFactory.setAnnotatedClasses(User.class);
-		sessionFactory.setAnnotatedClasses(Admin.class);
-*/
+		sessionFactory.setAnnotatedClasses(Product.class);
+		sessionFactory.setAnnotatedClasses(Expense.class);
+		sessionFactory.setAnnotatedClasses(Order.class);
+		sessionFactory.setAnnotatedClasses(Employees.class);
+		
+		
+		
 		return sessionFactory;
 	}
 
