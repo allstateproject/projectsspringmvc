@@ -33,12 +33,12 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	@Override
-	public String getProductBySizeAndDesign(int size, int design_num) throws BuisnessException{
+	public Product getProductBySizeAndDesign(int size, int design_num) throws BuisnessException{
 		// TODO Auto-generated method stub
 		Product products=productDao.getProductBySizeAndDesign(size, design_num);
 		if(products!=null)
 		{
-			return "available";
+			return products;
 		}
 		else
 		{

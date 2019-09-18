@@ -9,7 +9,7 @@ import com.allstate.training.ffd.exceptions.BuisnessException;
 public interface ProductService {
 	public void addProduct(Product p) throws BuisnessException;
 	public List<Product> getProductByShopId(int sid) throws BuisnessException;
-	public String getProductBySizeAndDesign(int size,int design_num) throws BuisnessException;
+	public Product getProductBySizeAndDesign(int size,int design_num) throws BuisnessException;
 	public void addProducts(List<Product> p) throws BuisnessException;
 	public Product getProductById(int id) throws BuisnessException;
 	public List<Product> getProductByCategory(String category) throws BuisnessException;
