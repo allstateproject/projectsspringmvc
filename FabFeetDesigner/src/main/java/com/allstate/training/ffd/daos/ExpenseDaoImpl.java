@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.allstate.training.ffd.entities.Customer;
-import com.allstate.training.ffd.entities.Employees;
+import com.allstate.training.ffd.entities.Employee;
 import com.allstate.training.ffd.entities.Expense;
 import com.allstate.training.ffd.entities.Order;
 
@@ -24,14 +24,7 @@ public class ExpenseDaoImpl implements ExpenseDao {
 	  @Autowired
 			SessionFactory sessionFactory;
 
-			public ExpenseDaoImpl(){
-				
-				Configuration con=new Configuration().configure().addAnnotatedClass(Expense.class);
-			    
-			   sessionFactory=con.buildSessionFactory();
-			    
-			    			
-			}
+			
 	@Override
 	public void addExpense(Expense ex) {
 		// TODO Auto-generated method stub
@@ -97,7 +90,7 @@ public class ExpenseDaoImpl implements ExpenseDao {
 		
 		List expenses = cr.list();
 		session.close();
-		return expenses;
+		//return expenses;
 		/*for(Expense ex:cr.list()) {
 			return ex.getCost();
 		}*/
@@ -107,7 +100,7 @@ public class ExpenseDaoImpl implements ExpenseDao {
 		 
 		
 		
-		return 0;
+		//return 0;
 	}
 
 
