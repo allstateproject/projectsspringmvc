@@ -1,5 +1,6 @@
 package com.allstate.training.ffd.entities;
 
+import java.io.Serializable;
 import java.sql.Blob;
 
 import javax.persistence.CascadeType;
@@ -11,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
-public class Product {
+public class Product implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int productId;
@@ -24,7 +25,6 @@ public class Product {
 	@JoinColumn(name="shopId")
 	private Shop shop1;
 	private String shopName;
-	//image
 	private int productCost;	
 	private Blob productImage;
 	public int getProductId() {
