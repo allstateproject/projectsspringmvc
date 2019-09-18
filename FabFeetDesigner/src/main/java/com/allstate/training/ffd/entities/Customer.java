@@ -20,7 +20,7 @@ public class Customer {
     private String customerName;
     private String customerPassword;
     private String customerAddress;
-    private long customerPhoneNumber;
+    private String customerPhoneNumber;
     
     @OneToMany(mappedBy="customer",cascade=CascadeType.ALL)
     private List<Order> order =new ArrayList();
@@ -48,10 +48,10 @@ public class Customer {
 	public void setCustomerAddress(String customerAddress) {
 		this.customerAddress = customerAddress;
 	}
-	public long getCustomerPhoneNumber() {
+	public String getCustomerPhoneNumber() {
 		return customerPhoneNumber;
 	}
-	public void setCustomerPhoneNumber(long customerPhoneNumber) {
+	public void setCustomerPhoneNumber(String customerPhoneNumber) {
 		this.customerPhoneNumber = customerPhoneNumber;
 	}
 	public List<Order> getOrder() {

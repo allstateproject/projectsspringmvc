@@ -1,5 +1,10 @@
 package com.allstate.training.ffd.daos;
 
+import java.util.List;
+
+import com.allstate.training.ffd.entities.Customer;
+import com.allstate.training.ffd.exceptions.BuisnessException;
+
 public interface CustomerDao {
 public void addCustomer(Customer c)throws BuisnessException;
 	public void updateCustomerPassword(int cid,  String newpass)throws BuisnessException;
