@@ -11,12 +11,12 @@ public interface EmployeeService {
 	public void updateDolById(int dol,int id);//update dol and set staus to fired
 	public void setPasswordById(String pass,int id) throws BusinessException;
 	public void setUsername(String userName) throws BusinessException;
-	public Employee getUsernameById(int id);
+	public Employee getUsernameById(int id) throws BusinessException;
 
 	public Employee getLeaveAvailableById(int id);
 	public void updateLeavesById(int leaves,int id) throws BusinessException;
 	public Employee getEmployeeById(int id) throws BusinessException;
-	public List<Employee> getAll();
-	public List<Employee> getEmployeeByDesignation(String designation);
-
+	public List<Employee> getAll() throws BusinessException;
+	public List<Employee> getEmployeeByDesignation(String designation) throws BusinessException;
+	public Employee login(String username ,String pass) throws BusinessException;
 }

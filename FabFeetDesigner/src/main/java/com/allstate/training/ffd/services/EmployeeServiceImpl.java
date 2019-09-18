@@ -83,30 +83,30 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 	@Override
-	public List<Employee> getAll() {
+	public List<Employee> getAll() throws BusinessException {
 		List<Employee> e1=employeeDao.getAll();
 		if(!e1.isEmpty())
 		{
 			return e1;
 		}
 		else
-			throw new RuntimeException("no employees available");
+			throw new BusinessException("no employees available");
 
 	}
 
 	@Override
-	public List<Employee> getEmployeeByDesignation(String designation) {
+	public List<Employee> getEmployeeByDesignation(String designation) throws BusinessException {
 		List<Employee> e2=employeeDao.getEmployeeByDesignation(designation);
 		if(!e2.isEmpty())
 		{
 			return e2;
 		}
 		else
-			throw new RuntimeException("no employess for this designation");
+			throw new BusinessException("no employess for this designation");
 	}
 
 	@Override
-	public Employee getUsernameById(int id) {
+	public Employee getUsernameById(int id) throws BusinessException {
 		Employee e4=new Employee();
 		e4=employeeDao.getEmployeeById(id);
 		if(e4!=null)
@@ -114,8 +114,22 @@ public class EmployeeServiceImpl implements EmployeeService{
 			return e4;
 		}
 		else
-			throw new RuntimeException("no username by this EmployeeId");
+			throw new BusinessException("no username by this EmployeeId");
 	}
+
+	@Override
+	public Employee login(String username, String pass) throws BusinessException {
+		Employee e5=employeeDao.login(username, pass);
+		if(e5!=null)
+		{
+			return e5;
+		}
+		else
+		{
+	
+		throw new BusinessException("Login credential invalid");
+		}
+}
 
 	
 }
