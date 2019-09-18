@@ -3,6 +3,7 @@ package com.allstate.training.ffd.services;
 import java.util.List;
 
 import com.allstate.training.ffd.entities.Employee;
+import com.allstate.training.ffd.entities.Shop;
 import com.allstate.training.ffd.exceptions.BusinessException;
 
 public interface EmployeeService {
@@ -19,4 +20,5 @@ public interface EmployeeService {
 	public List<Employee> getAll() throws BusinessException;
 	public List<Employee> getEmployeeByDesignation(String designation) throws BusinessException;
 	public Employee login(String username ,String pass) throws BusinessException;
+	public List<Employee> getEmployeeByShop(Shop s);
 }

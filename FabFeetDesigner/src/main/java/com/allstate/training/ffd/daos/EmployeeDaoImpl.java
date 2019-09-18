@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.allstate.training.ffd.entities.Employee;
+import com.allstate.training.ffd.entities.Shop;
 
 @Repository
 public class EmployeeDaoImpl implements EmployeeDao{
@@ -117,6 +118,22 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		System.out.println(e);
 		return e;
 		
+	}
+	/*public List<Employee> getEmployeeByShopId(int sid)
+	{
+		Session session=sessionFactory.openSession();
+		Criteria cr=session.createCriteria(Employee.class);
+		cr.add(Restrictions.eq("designation",designation));
+		List<Employee> e=cr.list();
+		return e;
+	}*/
+	public List<Employee> getEmployeeByShop(Shop s) {
+		
+		Session session=sessionFactory.openSession();
+		Criteria cr=session.createCriteria(Employee.class);
+		cr.add(Restrictions.eq("shop",s));
+		List<Employee> s1=cr.list();
+		return s1;
 	}
 	@Override
 	public List<Employee> getEmployeeByDesignation(String designation) {

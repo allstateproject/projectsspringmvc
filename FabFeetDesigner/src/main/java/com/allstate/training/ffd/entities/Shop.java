@@ -21,7 +21,44 @@ public class Shop {
 	@OneToMany(mappedBy="shop", cascade=CascadeType.ALL)
 	private List<Employee> employee;
 	
-	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((Address == null) ? 0 : Address.hashCode());
+		result = prime * result + ((employee == null) ? 0 : employee.hashCode());
+		result = prime * result + ((products == null) ? 0 : products.hashCode());
+		result = prime * result + shopId;
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Shop other = (Shop) obj;
+		if (Address == null) {
+			if (other.Address != null)
+				return false;
+		} else if (!Address.equals(other.Address))
+			return false;
+		if (employee == null) {
+			if (other.employee != null)
+				return false;
+		} else if (!employee.equals(other.employee))
+			return false;
+		if (products == null) {
+			if (other.products != null)
+				return false;
+		} else if (!products.equals(other.products))
+			return false;
+		if (shopId != other.shopId)
+			return false;
+		return true;
+	}
 	@Override
 	public String toString() {
 		return "Shop [shopId=" + shopId + ", Address=" + Address + "]";

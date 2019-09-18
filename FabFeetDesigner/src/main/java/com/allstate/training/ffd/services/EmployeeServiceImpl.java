@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.allstate.training.ffd.daos.EmployeeDao;
 import com.allstate.training.ffd.daos.EmployeeDaoImpl;
 import com.allstate.training.ffd.entities.Employee;
+import com.allstate.training.ffd.entities.Shop;
 import com.allstate.training.ffd.exceptions.BusinessException;
 @Service
 public class EmployeeServiceImpl implements EmployeeService{
@@ -116,7 +117,12 @@ public class EmployeeServiceImpl implements EmployeeService{
 		else
 			throw new BusinessException("no username by this EmployeeId");
 	}
-
+	public List<Employee> getEmployeeByShop(Shop s) {
+		List<Employee> es;
+		es=employeeDao.getEmployeeByShop(s);
+		
+		return es;
+	}
 	@Override
 	public Employee login(String username, String pass) throws BusinessException {
 		Employee e5=employeeDao.login(username, pass);
