@@ -19,13 +19,9 @@ public class Shop {
 	@OneToMany(mappedBy="shop1", cascade=CascadeType.ALL)
 	private List<Product> products;
 	@OneToMany(mappedBy="shop", cascade=CascadeType.ALL)
-	private List<Employees> employees;
-	public List<Employees> getEmployees() {
-		return employees;
-	}
-	public void setEmployees(List<Employees> employees) {
-		this.employees = employees;
-	}
+	private List<Employee> employee;
+	
+	
 	@Override
 	public String toString() {
 		return "Shop [shopId=" + shopId + ", Address=" + Address + "]";
@@ -48,11 +44,11 @@ public class Shop {
 	public void setProducts(List<Product> products) {
 		this.products = products;
 	}
-	/*public List<Employees> getEmployees() {
-		return employees;
+	public List<Employee> getEmployee() {
+		return employee;
 	}
-	public void setEmployees(List<Employees> employees) {
-		this.employees = employees;
-	}*/
+	public void setEmployee(List<Employee> employee) {
+		this.employee = employee;
+	}
 	
 }

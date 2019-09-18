@@ -14,7 +14,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 import com.allstate.training.ffd.entities.Customer;
-import com.allstate.training.ffd.entities.Employees;
+import com.allstate.training.ffd.entities.Employee;
 import com.allstate.training.ffd.entities.Expense;
 import com.allstate.training.ffd.entities.Order;
 import com.allstate.training.ffd.entities.Product;
@@ -74,7 +74,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		sessionFactory.setAnnotatedClasses(Product.class);
 		sessionFactory.setAnnotatedClasses(Expense.class);
 		sessionFactory.setAnnotatedClasses(Order.class);
-		sessionFactory.setAnnotatedClasses(Employees.class);
+		sessionFactory.setAnnotatedClasses(Employee.class);
 		
 		
 		

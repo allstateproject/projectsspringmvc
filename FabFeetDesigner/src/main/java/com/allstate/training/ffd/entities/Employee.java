@@ -9,8 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.annotations.DynamicUpdate;
+
 @Entity
-public class Employees {
+@DynamicUpdate
+public class Employee {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -31,10 +34,10 @@ public class Employees {
 	@Column(nullable=false)
 	private int leaves;
 	private int leaveAvailable;
-	private String ename;
+	private String username;
 	private String pass;
 	private String manager;
-	private String status1;
+	private String status1="active";
 	public int getEmpId() {
 		return empId;
 	}
@@ -83,11 +86,11 @@ public class Employees {
 	public void setLeaveAvailable(int leaveAvailable) {
 		this.leaveAvailable = leaveAvailable;
 	}
-	public String getEname() {
-		return ename;
+	public String getUsername() {
+		return username;
 	}
-	public void setEname(String ename) {
-		this.ename = ename;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 	public String getPass() {
 		return pass;
@@ -111,7 +114,7 @@ public class Employees {
 	public String toString() {
 		return "Employees [empId=" + empId + ", doj=" + doj + ", dol=" + dol + ", age=" + age + ", desgination="
 				+ desgination + ", salary=" + salary + ", leaves=" + leaves + ", leaveAvailable=" + leaveAvailable
-				+ ", ename=" + ename + ", pass=" + pass + ", manager=" + manager + ", status1=" + status1 + "]";
+				+ ", username=" + username + ", pass=" + pass + ", manager=" + manager + ", status1=" + status1 + "]";
 	}
 	
 	
