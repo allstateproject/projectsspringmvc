@@ -16,6 +16,7 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int customerId;
+	private String customerUserName;
     private String customerName;
     private String customerPassword;
     private String customerAddress;
@@ -59,11 +60,17 @@ public class Customer {
 	public void setOrder(List<Order> order) {
 		this.order =  order;
 	}
+		public String getCustomerUserName() {
+		return customerUserName;
+	}
+	public void setCustomerUserName(String customerUserName) {
+		this.customerUserName = customerUserName;
+	}
 	@Override
 	public String toString() {
-		return "Customer [customerId=" + customerId + ", customerName=" + customerName + ", customerPassword="
-				+ customerPassword + ", customerAddress=" + customerAddress + ", customerPhoneNumber="
-				+ customerPhoneNumber + "]";
+		return "Customer [customerId=" + customerId + ", customerUserName=" + customerUserName + ", customerName="
+				+ customerName + ", customerPassword=" + customerPassword + ", customerAddress=" + customerAddress
+				+ ", customerPhoneNumber=" + customerPhoneNumber + ", order=" + order + "]";
 	}
     
 	
