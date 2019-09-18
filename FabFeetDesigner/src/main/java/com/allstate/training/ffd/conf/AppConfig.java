@@ -17,6 +17,7 @@ import com.allstate.training.ffd.entities.Customer;
 import com.allstate.training.ffd.entities.Employee;
 import com.allstate.training.ffd.entities.Expense;
 import com.allstate.training.ffd.entities.Order;
+import com.allstate.training.ffd.entities.OrderDetails;
 import com.allstate.training.ffd.entities.Product;
 import com.allstate.training.ffd.entities.Shop;
 
@@ -74,6 +75,7 @@ public class AppConfig extends WebMvcConfigurerAdapter {
 		sessionFactory.setAnnotatedClasses(Product.class);
 		sessionFactory.setAnnotatedClasses(Expense.class);
 		sessionFactory.setAnnotatedClasses(Order.class);
+		sessionFactory.setAnnotatedClasses(OrderDetails.class);
 		sessionFactory.setAnnotatedClasses(Employee.class);
 		
 		
