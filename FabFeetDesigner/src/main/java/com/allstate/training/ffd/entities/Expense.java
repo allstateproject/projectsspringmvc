@@ -1,6 +1,7 @@
 package com.allstate.training.ffd.entities;
 
-import java.sql.Blob;
+import java.sql.Clob;
+import java.sql.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,7 +15,14 @@ public class Expense {
  private int expenseId;
  private String expenseType;
  private float expenseAmount;
- private Blob expenseDoc;
+ private Date expenseDate;
+ public Date getExpenseDate() {
+	return expenseDate;
+}
+public void setExpenseDate(Date expenseDate) {
+	this.expenseDate = expenseDate;
+}
+private Clob expenseDoc;
 public int getExpenseId() {
 	return expenseId;
 }
@@ -33,16 +41,17 @@ public float getExpenseAmount() {
 public void setExpenseAmount(float expenseAmount) {
 	this.expenseAmount = expenseAmount;
 }
-public Blob getExpenseDoc() {
+public Clob getExpenseDoc() {
 	return expenseDoc;
 }
-public void setExpenseDoc(Blob expenseDoc) {
-	this.expenseDoc = expenseDoc;
+public void setExpenseDoc(Clob expenseDocument) {
+	this.expenseDoc = expenseDocument;
 }
 @Override
 public String toString() {
 	return "Expense [expenseId=" + expenseId + ", expenseType=" + expenseType + ", expenseAmount=" + expenseAmount
-			+ ", expenseDoc=" + expenseDoc + "]";
+			+ ", expenseDoc=" + expenseDoc + expenseDate + "]";
 }
+
  
 }
