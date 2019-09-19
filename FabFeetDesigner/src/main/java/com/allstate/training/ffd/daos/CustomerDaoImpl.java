@@ -9,10 +9,11 @@ import org.hibernate.criterion.Criterion;
 import org.hibernate.criterion.LogicalExpression;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.allstate.training.ffd.entities.Customer;
 import com.allstate.training.ffd.exceptions.BuisnessException;
-
+@Repository
 public class CustomerDaoImpl implements CustomerDao {
 	@Autowired
   public SessionFactory sessionFactory;

@@ -3,11 +3,13 @@ package com.allstate.training.ffd.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.allstate.training.ffd.daos.CustomerDao;
 import com.allstate.training.ffd.entities.Customer;
 import com.allstate.training.ffd.exceptions.BuisnessException;
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 	@Autowired
   private CustomerDao customerDao;
