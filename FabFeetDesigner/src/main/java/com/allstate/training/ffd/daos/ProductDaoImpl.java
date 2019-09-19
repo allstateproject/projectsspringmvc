@@ -18,11 +18,11 @@ public class ProductDaoImpl implements ProductDao{
 	
 	@Autowired
 	SessionFactory sessionFactory;	
-	public ProductDaoImpl() {
+	/*public ProductDaoImpl() {
 		// TODO Auto-generated constructor stub
 		Configuration con=new Configuration().configure().addAnnotatedClass(Product.class);
 	    sessionFactory=con.buildSessionFactory();
-	}
+	}*/
 	@Override
 	public void addProduct(Product p) {
 		// TODO Auto-generated method stub
